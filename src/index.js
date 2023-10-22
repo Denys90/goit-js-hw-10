@@ -28,6 +28,7 @@ async function createMarkup() {
       const catInfoMarkup = ` <div class="container">
    <div class="cat-info" style="--clr: #009688">
      <div class="img-box">
+     <span class="loader"></span>
        <img src="${url}" alt="${data[0].breeds[0].breed}" width="350" height="300" />
      </div>
      <div class="content">
@@ -44,3 +45,12 @@ async function createMarkup() {
   }
 }
 //<------------------------------------------------------------
+
+// function loader() {
+//   setTimeout(function () {
+//     const loaderCl = document.querySelector('.loader');
+//     if (!preloader.classList.contains('done')) {
+//       preloader.classList.add('dane');
+//     }
+//   }, 1000);
+// }
