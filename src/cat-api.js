@@ -34,9 +34,12 @@ function fetchCatByBreed(breedId) {
     .get(`https://api.thecatapi.com/v1/images/search?breed_ids=${breedId}`)
     .then(response => {
       if (!response.status === 200) {
-        throw new Error(response.status);
+        Notiflix.Notify.failure(
+          'Oops! Something went wrong! Try reloading the page!'
+        );
+        throw Error(response.status);
       }
-      console.log(response.data);
+
       return response.data;
     })
     .catch(error => {
