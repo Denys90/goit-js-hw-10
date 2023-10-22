@@ -33,11 +33,14 @@ function fetchCatByBreed(breedId) {
   return axios
     .get(`https://api.thecatapi.com/v1/images/search?breed_ids=${breedId}`)
     .then(response => {
-      if (!response.status === 200) {
-        Notiflix.Notify.failure(
-          'Oops! Something went wrong! Try reloading the page!'
-        );
-        throw Error(response.status);
+      if (response.status === 200) {
+        if (Array.isArray(response.data) && response.data.length > 0) {
+          return response.data;
+        } else {
+          Notiflix.Notify.failure(
+            'Oops! Something went wrong! Try to choose a different kitten!'
+          );
+        }
       }
 
       return response.data;

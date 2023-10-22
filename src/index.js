@@ -46,10 +46,10 @@ async function createMarkup() {
 }
 //<------------------------------------------------------------
 
-refs.img_load.addEventListener('load', onLoader);
-function onLoader() {
-  refs.loader.classList('hide');
-  setTimeout(() => {
-    refs.loader.remove();
-  }, 4000);
-}
+// refs.img_load.addEventListener('load', onLoader);
+// function onLoader() {
+//   refs.loader.classList('hide');
+//   setTimeout(() => {
+//     refs.loader.remove();
+//   }, 4000);
+// }
