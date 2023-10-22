@@ -178,3 +178,6 @@ p span {
     box-shadow: 0.2em -0.2em 0 0 currentcolor;
   }
 }
+.hide {
+  opacity: 0;
+}

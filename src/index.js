@@ -29,7 +29,7 @@ async function createMarkup() {
    <div class="cat-info" style="--clr: #009688">
      <div class="img-box">
      <span class="loader"></span>
-       <img src="${url}" alt="${data[0].breeds[0].breed}" width="350" height="300" />
+       <img class="img-load" src="${url}" alt="${data[0].breeds[0].breed}" width="350" height="300" />
      </div>
      <div class="content">
        <h2>${data[0].breeds[0].name}</h2>
@@ -46,11 +46,10 @@ async function createMarkup() {
 }
 //<------------------------------------------------------------
 
-// function loader() {
-//   setTimeout(function () {
-//     const loaderCl = document.querySelector('.loader');
-//     if (!preloader.classList.contains('done')) {
-//       preloader.classList.add('dane');
-//     }
-//   }, 1000);
-// }
+refs.img_load.addEventListener('load', onLoader);
+function onLoader() {
+  refs.loader.classList('hide');
+  setTimeout(() => {
+    refs.loader.remove();
+  }, 4000);
+}
